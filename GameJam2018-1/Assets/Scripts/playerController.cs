@@ -40,7 +40,6 @@ public class playerController : MonoBehaviour {
             movement += Vector3.right * speed/1.2f;
         }
 
-        player.Translate(movement);
 
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

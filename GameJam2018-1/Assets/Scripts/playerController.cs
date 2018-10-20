@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerController : MonoBehaviour {
 
     public float speed = 0.1f;
+    public Vector3 newPos;
 
     Transform player;
 
@@ -21,7 +22,11 @@ public class playerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
+
         Vector3 movement = Vector3.zero;
+        Vector3 teleport = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -39,12 +44,14 @@ public class playerController : MonoBehaviour {
         {
             movement += Vector3.right * speed/1.2f;
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            teleport = Vector3.up * speed * 30;
+            player.Translate(teleport);
+        }
 
         player.position += movement;
-
-
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
+        
         //transform.rotation = Quaternion.Euler(0, 0, 90);
     }
 }

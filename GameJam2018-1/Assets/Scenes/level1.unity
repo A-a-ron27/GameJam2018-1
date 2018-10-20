@@ -3401,6 +3401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: -10}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1956283328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3413,6 +3414,7 @@ GameObject:
   - component: {fileID: 1956283331}
   - component: {fileID: 1956283332}
   - component: {fileID: 1956283333}
+  - component: {fileID: 1956283334}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -3491,6 +3493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+  newPos: {x: 0, y: 0, z: 0}
 --- !u!50 &1956283332
 Rigidbody2D:
   serializedVersion: 4
@@ -3526,6 +3529,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.215
+--- !u!95 &1956283334
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956283328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1994636945
 GameObject:
   m_ObjectHideFlags: 0
